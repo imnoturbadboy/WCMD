@@ -93,4 +93,4 @@ Press `G` to toggle the radar overlay (requires prior calibration). Press `V` to
 
 ## Author
 
-[imnoturbadboy]|(https://github.com/imnoturbadboy)|(t.me/trac3back)
+[imnoturbadboy] | (https://github.com/imnoturbadboy) | (t.me/trac3back)
