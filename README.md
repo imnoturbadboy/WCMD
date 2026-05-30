@@ -1,7 +1,7 @@
 # WCMD
 # WiFi CSI Motion Detector by imnoturbadboy
 
-Passive motion detection for the M5Cardputer using Wi-Fi Channel State Information (CSI). The device operates in promiscuous mode, capturing 802.11 data frames from a selected access point and analyzing signal amplitude variance to infer human movement — without any dedicated sensors.
+Passive motion detection for the M5Cardputer using Wi-Fi Channel State Information (CSI). The device operates in promiscuous mode, capturing 802.11 data frames from a selected access point and analyzing signal amplitude variance to infer human movement - without any dedicated sensors.
 
 ---
 
@@ -9,19 +9,19 @@ Passive motion detection for the M5Cardputer using Wi-Fi Channel State Informati
 
 The firmware captures raw Wi-Fi frames via the ESP32 promiscuous API and extracts payload bytes that approximate CSI energy. During a calibration phase, a baseline amplitude is established from ambient network traffic. After calibration, real-time deviation from this baseline is used as a movement indicator: human bodies attenuate and reflect 2.4 GHz signals, causing measurable amplitude fluctuations.
 
-This approach does not use the ESP32's hardware CSI extraction (`esp_wifi_set_csi()`), but instead derives a scalar energy proxy from frame payloads — making it compatible with standard ESP-IDF Wi-Fi builds without custom patches.
+This approach does not use the ESP32's hardware CSI extraction (`esp_wifi_set_csi()`), but instead derives a scalar energy proxy from frame payloads - making it compatible with standard ESP-IDF Wi-Fi builds without custom patches.
 
 ---
 
 ## Features
 
-- **AP Scanner** — discovers nearby access points with RSSI, channel, encryption type, and estimated client count (via passive client sniffing across channels 1–13)
-- **Monitor Mode** — real-time amplitude and deviation display for a selected AP
-- **Radar View** — visual representation of detected motion with distance estimation zones (<1 m / 1–3 m / >3 m) and adjustable radar size
-- **Debug Mode** — packet counters, per-second rate, channel switching (1–13), baseline readout, live deviation
-- **Test Mode** — simulated waveform for UI and threshold validation without a live network
-- **Adjustable threshold** — configurable sensitivity (1.0–30.0) for different environments
-- **Client counting** — passive enumeration of associated stations per BSSID
+- **AP Scanner** - discovers nearby access points with RSSI, channel, encryption type, and estimated client count (via passive client sniffing across channels 1–13)
+- **Monitor Mode** - real-time amplitude and deviation display for a selected AP
+- **Radar View** - visual representation of detected motion with distance estimation zones (<1 m / 1–3 m / >3 m) and adjustable radar size
+- **Debug Mode** - packet counters, per-second rate, channel switching (1–13), baseline readout, live deviation
+- **Test Mode** - simulated waveform for UI and threshold validation without a live network
+- **Adjustable threshold** - configurable sensitivity (1.0–30.0) for different environments
+- **Client counting** - passive enumeration of associated stations per BSSID
 
 ---
 
@@ -84,7 +84,7 @@ Press `G` to toggle the radar overlay (requires prior calibration). Press `V` to
 
 ## Limitations
 
-- Requires active network traffic on the monitored AP — detection quality degrades on low-activity networks
+- Requires active network traffic on the monitored AP - detection quality degrades on low-activity networks
 - Amplitude-based CSI proxy is less precise than hardware CSI; environmental RF noise affects baseline stability
 - Distance estimation in radar view is heuristic and not geometrically accurate
 - Client counting is approximate some clients may be missed depending on traffic volume during the scan window
